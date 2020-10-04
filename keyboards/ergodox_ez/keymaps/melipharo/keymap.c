@@ -5,6 +5,7 @@
 #define FN_NUM 1
 #define MEDIA 2
 #define SYSLEDS 3
+//KC_NO - NA
 
 // A 'transparent' key code (that falls back to the layers below it).
 #define ___ KC_TRNS // KC_TRANSPARENT
@@ -13,19 +14,19 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // base layer
     [BASE] = LAYOUT_ergodox_pretty(
-        KC_EQL,         KC_1,       KC_2,                   KC_3,       KC_4,       KC_5,       KC_LEFT,                    KC_RGHT,            KC_6,       KC_7,       KC_8,       KC_9,           KC_0,                   KC_MINS,
-        KC_DEL,         KC_Q,       KC_W,                   KC_E,       KC_R,       KC_T,       TG(FN_NUM),                 TG(FN_NUM),         KC_Y,       KC_U,       KC_I,       KC_O,           KC_P,                   KC_BSLS,
-        KC_BSPC,        KC_A,       KC_S,                   KC_D,       KC_F,       KC_G,                                                       KC_H,       KC_J,       KC_K,       KC_L,           LT(MEDIA, KC_SCLN),     LGUI_T(KC_QUOT),
-        KC_LSFT,        KC_Z,       KC_X,                   KC_C,       KC_V,       KC_B,       ALL_T(KC_F1),               MEH_T(KC_INS),      KC_N,       KC_M,       KC_COMM,    KC_DOT,         LT(SYSLEDS, KC_SLSH),   KC_RSFT,
-        LSA(KC_0),      KC_LCTL,    LT(FN_NUM, KC_GRV),     KC_LEFT,    KC_RGHT,                                                                KC_UP,      KC_DOWN,    KC_LBRC,    KC_RBRC,        LSA(KC_1),
-                                                                                LALT_T(KC_APP),     KC_ESC,                     KC_PAUS,    KC_LALT,
-                                                                                                    KC_HOME,                    KC_PGUP,
-                                                                                KC_SPC,   KC_TAB,   KC_END,                     KC_PGDN,    KC_LGUI,    KC_ENT
+        KC_EQL,         KC_1,                KC_2,       KC_3,       KC_4,       KC_5,       KC_NO,                      KC_INS,             KC_6,       KC_7,       KC_8,       KC_9,           KC_0,                   KC_MINS,
+        KC_DEL,         KC_Q,                KC_W,       KC_E,       KC_R,       KC_T,       TG(FN_NUM),                 TG(FN_NUM),         KC_Y,       KC_U,       KC_I,       KC_O,           KC_P,                   KC_BSLS,
+        KC_BSPC,        KC_A,                KC_S,       KC_D,       KC_F,       KC_G,                                                       KC_H,       KC_J,       KC_K,       KC_L,           KC_SCLN,                KC_ENT,
+        KC_LSFT,        KC_Z,                KC_X,       KC_C,       KC_V,       KC_B,       LSA(KC_1),                  LSA(KC_2),          KC_N,       KC_M,       KC_COMM,    KC_DOT,         LT(SYSLEDS, KC_SLSH),   KC_RSFT,
+        KC_LCTRL,       LT(FN_NUM, KC_GRV),  KC_QUOT,    KC_LEFT,    KC_RGHT,                                                                            KC_UP,      KC_DOWN,    KC_LBRC,        LT(FN_NUM, KC_RBRC),    LT(MEDIA, KC_NO)
+                                                                                KC_LALT,  KC_ESC,                      KC_PAUS,    LALT_T(KC_APP),
+                                                                                                    KC_HOME,           KC_PGUP,
+                                                                                KC_SPC,   KC_TAB,   KC_END,            KC_PGDN,    KC_LGUI,    KC_ENT
         ),
 
     // fn and nums layer
     [FN_NUM] = LAYOUT_ergodox_pretty(
-        KC_NO,          KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      ___,                        ___,        KC_F6,      KC_F7,      KC_F8,      KC_F9,          KC_F10,         KC_F11,
+        ___,          KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      ___,                        ___,        KC_F6,      KC_F7,      KC_F8,      KC_F9,          KC_F10,         KC_F11,
         ___,            KC_EXLM,    KC_AT,      KC_LCBR,    KC_RCBR,    KC_PIPE,    ___,                        ___,        KC_UP,      KC_7,       KC_8,       KC_9,           KC_ASTR,        KC_F12,
         ___,            KC_HASH,    KC_DLR,     KC_LPRN,    KC_RPRN,    KC_GRV,                                             KC_DOWN,    KC_4,       KC_5,       KC_6,           KC_PLUS,        ___,
         ___,            KC_PERC,    KC_CIRC,    KC_LBRC,    KC_RBRC,    KC_TILD,    ___,                        ___,        KC_AMPR,    KC_1,       KC_2,       KC_3,           KC_BSLS,        ___,
@@ -52,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ___, ___, ___, ___, ___, ___, ___,                       ___, ___, ___, ___, ___, ___,          ___,
         ___, ___, ___, ___, ___, ___, ___,                       ___, ___, ___, ___, ___, ___,          ___,
         ___, ___, ___, ___, ___, ___,                                 ___, ___, ___, ___, ___,          ___,
-        ___, ___, ___, ___, ___, ___, ___,                       ___, ___, ___, ___, ___, TT(SYSLEDS),  ___,
+        ___, ___, ___, ___, ___, ___, ___,                       ___, ___, ___, ___, ___, MO(SYSLEDS),  ___,
         ___, ___, ___, ___, ___,                                      ___, ___, ___, ___, ___,
                                    ___, ___,                ___, ___,
                                         ___,                ___,
